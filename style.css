@@ -1,0 +1,165 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Coloca los elementos en una columna */
+    height: 100vh;
+    background: linear-gradient(135deg, #3C54EC, #5431DB); /* Fondo degradado azul y púrpura */
+    color: #fff; /* Texto blanco para contraste */
+}
+
+.container {
+    display: flex;
+    flex-direction: column; /* Apila las secciones verticalmente */
+    width: 90%;
+    max-width: 600px; /* Limita el ancho máximo */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    background: linear-gradient(135deg, #6D68E9, #6841DC); /* Fondo degradado para las cajas */
+    padding: 20px;
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
+}
+
+.left {
+    text-align: center; /* Centra el texto */
+    margin-bottom: 20px; /* Espaciado entre las secciones */
+}
+
+.left h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #fff; /* Texto blanco */
+}
+
+.left h2 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #e0e0ff; /* Texto ligeramente más claro */
+}
+
+.left p {
+    font-size: 1em;
+    margin-bottom: 15px;
+    color: #dcdcdc; /* Texto gris claro */
+}
+
+.left a {
+    color: #fff; /* Texto blanco */
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 15px; /* Espaciado entre el enlace y el botón */
+    display: block; /* Hace que el enlace ocupe toda la línea */
+    text-align: center; /* Centra el texto */
+}
+
+.left button {
+    padding: 10px 20px;
+    background-color: #5431DB; /* Botón púrpura */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+    display: block; /* Hace que el botón ocupe toda la línea */
+    text-align: center; /* Centra el texto */
+    margin: 0 auto; /* Centra el botón horizontalmente */
+}
+
+.left button a {
+    color: #fff; /* Texto blanco */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    display: inline-block; /* Asegura que el enlace dentro del botón se comporte correctamente */
+}
+
+.left button:hover {
+    background-color: #3C54EC; /* Hover más oscuro */
+}
+
+.right {
+    background: linear-gradient(135deg, #5787F8, #7063E6); /* Fondo degradado para las cajas */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+.right h1 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #fff; /* Texto blanco */
+}
+
+.right p {
+    font-size: 1em;
+    margin-bottom: 15px;
+    color: #e0e0ff; /* Texto ligeramente más claro */
+}
+
+.right input {
+    width: 100%;
+    max-width: 300px; /* Limita el ancho máximo */
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 1em;
+    background-color: #fff; /* Fondo blanco */
+    color: #333; /* Texto oscuro */
+    transition: border-color 0.3s ease;
+    margin-bottom: 20px; /* Espaciado entre el input y el botón */
+}
+
+.right input::placeholder {
+    color: #aaa; /* Color del texto del placeholder */
+}
+
+.right input:hover {
+    border-color: #5431DB; /* Hover con borde púrpura */
+}
+
+.right button {
+    padding: 10px 20px;
+    background-color: #5431DB; /* Botón púrpura */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.right button:hover {
+    background-color: #3C54EC; /* Hover más oscuro */
+}
+
+.resultado {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 1.2em;
+    text-align: center;
+    color: #fff; /* Texto blanco */
+}
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 768px) {
+    .container {
+        width: 95%; /* Ajusta el ancho */
+    }
+
+    .left h1, .right h1 {
+        font-size: 1.8em; /* Ajusta el tamaño del texto */
+    }
+
+    .left h2, .right p {
+        font-size: 1.2em; /* Ajusta el tamaño del texto */
+    }
+
+    .right input {
+        width: 100%; /* Asegura que el input ocupe todo el ancho disponible */
+    }
+}
