@@ -1,165 +1,129 @@
+/* General */
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; /* Coloca los elementos en una columna */
-    height: 100vh;
-    background: linear-gradient(135deg, #3C54EC, #5431DB); /* Fondo degradado azul y púrpura */
-    color: #fff; /* Texto blanco para contraste */
-}
-
-.container {
-    display: flex;
-    flex-direction: column; /* Apila las secciones verticalmente */
-    width: 90%;
-    max-width: 600px; /* Limita el ancho máximo */
-    border-radius: 15px; /* Bordes redondeados */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
-    background: linear-gradient(135deg, #6D68E9, #6841DC); /* Fondo degradado para las cajas */
-    padding: 20px;
-    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
-}
-
-.left {
-    text-align: center; /* Centra el texto */
-    margin-bottom: 20px; /* Espaciado entre las secciones */
-}
-
-.left h1 {
-    font-size: 2em;
-    margin-bottom: 10px;
-    color: #fff; /* Texto blanco */
-}
-
-.left h2 {
-    font-size: 1.5em;
-    margin-bottom: 15px;
-    color: #e0e0ff; /* Texto ligeramente más claro */
-}
-
-.left p {
-    font-size: 1em;
-    margin-bottom: 15px;
-    color: #dcdcdc; /* Texto gris claro */
-}
-
-.left a {
-    color: #fff; /* Texto blanco */
-    text-decoration: none;
-    font-weight: bold;
-    margin-bottom: 15px; /* Espaciado entre el enlace y el botón */
-    display: block; /* Hace que el enlace ocupe toda la línea */
-    text-align: center; /* Centra el texto */
-}
-
-.left button {
-    padding: 10px 20px;
-    background-color: #5431DB; /* Botón púrpura */
+    background: linear-gradient(135deg, #89CFF0, #4682B4); /* Fondo degradado azul */
     color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.3s ease;
-    display: block; /* Hace que el botón ocupe toda la línea */
-    text-align: center; /* Centra el texto */
-    margin: 0 auto; /* Centra el botón horizontalmente */
-}
-
-.left button a {
-    color: #fff; /* Texto blanco */
-    text-decoration: none; /* Elimina el subrayado del enlace */
-    display: inline-block; /* Asegura que el enlace dentro del botón se comporte correctamente */
-}
-
-.left button:hover {
-    background-color: #3C54EC; /* Hover más oscuro */
-}
-
-.right {
-    background: linear-gradient(135deg, #5787F8, #7063E6); /* Fondo degradado para las cajas */
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    padding: 20px;
-    border-radius: 10px; /* Bordes redondeados */
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
 }
 
-.right h1 {
-    font-size: 1.8em;
-    margin-bottom: 15px;
-    color: #fff; /* Texto blanco */
-}
-
-.right p {
-    font-size: 1em;
-    margin-bottom: 15px;
-    color: #e0e0ff; /* Texto ligeramente más claro */
-}
-
-.right input {
+/* Fondo ilustrado */
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    max-width: 300px; /* Limita el ancho máximo */
-    height: 40px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 5px;
+    height: 100%;
+    background: url('https://source.unsplash.com/1920x1080/?lake,mountain') no-repeat center center/cover;
+    z-index: -1;
+}
+
+/* Contenedor informativo */
+.info-container {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+    padding: 20px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    margin-bottom: 20px;
+}
+
+.info-container h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #E0F7FA; /* Azul claro */
+}
+
+.info-container h2 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #B2EBF2; /* Azul pastel */
+}
+
+.info-container p {
     font-size: 1em;
-    background-color: #fff; /* Fondo blanco */
-    color: #333; /* Texto oscuro */
-    transition: border-color 0.3s ease;
-    margin-bottom: 20px; /* Espaciado entre el input y el botón */
+    color: #BBDEFB; /* Azul suave */
 }
 
-.right input::placeholder {
-    color: #aaa; /* Color del texto del placeholder */
+/* Contenedor del formulario */
+.form-container {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+    padding: 20px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
 }
 
-.right input:hover {
-    border-color: #5431DB; /* Hover con borde púrpura */
+.form-container h1 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #E0F7FA; /* Azul claro */
 }
 
-.right button {
-    padding: 10px 20px;
-    background-color: #5431DB; /* Botón púrpura */
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-container input {
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1em;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: #333;
+}
+
+.form-container input::placeholder {
+    color: #aaa;
+}
+
+.form-container button {
+    padding: 10px;
+    background: #4682B4; /* Azul vibrante */
     color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
     font-size: 1em;
     transition: background-color 0.3s ease;
 }
 
-.right button:hover {
-    background-color: #3C54EC; /* Hover más oscuro */
+.form-container button:hover {
+    background: #5A9BD4; /* Azul más claro */
 }
 
 .resultado {
-    margin-top: 20px;
-    font-weight: bold;
+    margin-top: 15px;
     font-size: 1.2em;
-    text-align: center;
-    color: #fff; /* Texto blanco */
+    font-weight: bold;
+    color: #BBDEFB; /* Azul suave */
 }
 
-/* Media queries para pantallas pequeñas */
+/* Responsivo */
 @media (max-width: 768px) {
-    .container {
-        width: 95%; /* Ajusta el ancho */
+    .info-container, .form-container {
+        width: 95%;
     }
 
-    .left h1, .right h1 {
-        font-size: 1.8em; /* Ajusta el tamaño del texto */
+    .info-container h1, .form-container h1 {
+        font-size: 1.6em;
     }
 
-    .left h2, .right p {
-        font-size: 1.2em; /* Ajusta el tamaño del texto */
-    }
-
-    .right input {
-        width: 100%; /* Asegura que el input ocupe todo el ancho disponible */
+    .info-container h2, .form-container p {
+        font-size: 1em;
     }
 }
