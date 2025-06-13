@@ -1,57 +1,63 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Premios</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premios QR Perritos</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <!-- Sección izquierda -->
-    <div class="left">
-      <h1>¡Hola! Soy Ariel, tu paseador de perritos profesional 🐕</h1>
-      <!--<h2>Premios especiales en tus compras</h2>-->
-      <p>¿Acabas de comprar en nuestra tienda aliada? ¡Ingresa el valor de compra y descubre tu premio especial para consentir a tu peludo!</p>
-      <a href="#">Conoce más sobre mis servicios.</a>
-      <button><a href="https://wa.link/1mgyca">¡Agenda tu paseo por WhatsApp!</a></button>
-    </div>
+  <!-- Fondo ilustrado -->
+  <div class="background"></div>
 
-    <!-- Sección derecha -->
-    <div class="right">
-      <h1>¡Premios para tu mascota!</h1>
-      <p>Ingresa el valor de tu compra en la tienda aliada y descubre cómo ganar paseos gratis o descuentos:</p>
-      <input type="text" id="nombre" placeholder="Tu nombre">
-      <input type="number" id="valor" placeholder="Ej: 50000, Sin puntos.">
-      <button onclick="calcularPremio()">Descubrir premio</button>
-      <div class="resultado" id="resultado"></div>
-    </div>
+  <!-- Sección informativa -->
+  <div class="info-container">
+    <h1>QR Perritos</h1>
+    <h2>¡Descubre premios especiales!</h2>
+    <p>Somos expertos en paseos para mascotas. Participa ingresando el monto de tu compra y descubre increíbles premios.</p>
   </div>
 
+  <!-- Sección de formulario -->
+  <div class="form-container">
+    <h1>🎁 Descubre tu premio</h1>
+    <form>
+      <input type="text" id="nombre" placeholder="Tu nombre" required>
+      <input type="number" id="monto" placeholder="Monto gastado" required>
+      <button type="button" onclick="mostrarPremio()">Ver premio</button>
+    </form>
+    <div class="resultado" id="resultado"></div>
+  </div>
+
+  <!-- Script para mostrar el premio -->
   <script>
-    function calcularPremio() {
-      const valor = parseFloat(document.getElementById('valor').value);
+    function mostrarPremio() {
+      const nombre = document.getElementById('nombre').value.trim();
+      const monto = parseFloat(document.getElementById('monto').value);
       const resultado = document.getElementById('resultado');
 
-      if (isNaN(valor) || valor <= 0) {
-        resultado.textContent = "Por favor ingresá un valor válido.";
+      if (!nombre) {
+        resultado.textContent = "Por favor, ingresa tu nombre.";
+        return;
+      }
+
+      if (isNaN(monto) || monto <= 0) {
+        resultado.textContent = `Hola ${nombre}, por favor ingresa un monto válido.`;
         return;
       }
 
       let premio = "";
 
-      if (valor >= 100000) {
-        premio = nombre+"¡Un paseo grati!";
-      } else if (valor >= 90000) {
-        premio = "¡Descuento de 20% en los tres primeros paseos!";
-      } else if (valor >= 80000) {
-        premio = "¡Descuento de 10% en los dos primeros paseos!";
-      }  else if (valor >= 70000) {
-          premio = "¡Descuento de 10% en los dos primeros paseos!";
+      if (monto >= 100000) {
+        premio = "¡Un paseo gratis!";
+      } else if (monto >= 90000) {
+        premio = "¡Descuento del 20% en paseos!";
+      } else if (monto >= 80000) {
+        premio = "¡Descuento del 10% en paseos!";
       } else {
         premio = "¡Gracias por participar!";
       }
 
-      resultado.textContent = premio;
+      resultado.textContent = `Hola ${nombre}, tu premio es: ${premio}`;
     }
   </script>
 </body>
